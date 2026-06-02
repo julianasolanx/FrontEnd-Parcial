@@ -1,5 +1,33 @@
 <div class="flex flex-col gap-2">
-  <div class="bg-indigo-600 px-4 p-2">
+  <div class="bg-indigo-600 px-4 p-2 text-white font-semibold">
     <h1>Empresas</h1>
+  </div>
+
+  <div class="p-8 flex">
+    <table class="w-full h-full">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>NIT</th>
+          <th>Ciudad</th>
+          <th>Sector</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Empresa Ejemplo S.A.</td>
+          <td>900.123.456-7</td>
+          <td>Bogotád</td>
+          <td>Tecnología</td>
+          <td class="flex flex-col gap-1">
+            <button type="button" class="bg-indigo-300 px-2 rounded clickable">Editar</button>
+            <button type="button" class="bg-red-300 px-2 rounded clickable">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
