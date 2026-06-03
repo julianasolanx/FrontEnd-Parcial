@@ -12,7 +12,6 @@
           <th>NIT</th>
           <th>Ciudad</th>
           <th>Sector</th>
-          <th>Acciones</th>
         </tr>
       </thead>
       <tbody>
@@ -22,16 +21,12 @@
           <td>900.123.456-7</td>
           <td>Bogotád</td>
           <td>Tecnología</td>
-          <td class="flex flex-col gap-1">
-            <button type="button" class="bg-indigo-300 px-2 rounded clickable">Editar</button>
-            <button type="button" class="bg-red-300 px-2 rounded clickable">Eliminar</button>
-          </td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <div>
+  <div class="max-w-120 mx-auto w-full">
     <form action="/empresas" class="flex flex-col gap-2">
       <input type="hidden" id="id" name="id" />
 
@@ -55,7 +50,9 @@
         <input type="text" id="sector" name="sector" required />
       </div>
 
-      <button type="submit">Guardar Empresa</button>
+      <button type="submit" class="bg-indigo-500 text-white font-semibold p-2 rounded">
+        Guardar Empresa
+      </button>
     </form>
   </div>
 </div>
