@@ -3,6 +3,8 @@
     <h1>Empresas</h1>
   </div>
 
+  <p>hay {{empresas.length}} empresas</p>
+
   <div class="p-8 flex">
     <table class="w-full h-full">
       <thead>
@@ -15,39 +17,39 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>Empresa Ejemplo S.A.</td>
-          <td>900.123.456-7</td>
-          <td>Bogotád</td>
-          <td>Tecnología</td>
+        <tr *ngFor="let empresa of empresas">
+          <td>{{ empresa.id }}</td>
+          <td>{{ empresa.nombre }}</td>
+          <td>{{ empresa.nit }}</td>
+          <td>{{ empresa.ciudad }}</td>
+          <td>{{ empresa.sector }}</td>
         </tr>
       </tbody>
     </table>
   </div>
 
   <div class="max-w-120 mx-auto w-full">
-    <form action="/empresas" class="flex flex-col gap-2">
-      <input type="hidden" id="id" name="id" />
+    <form (ngSubmit)="onCreate()" class="flex flex-col gap-2">
+      <input type="hidden" id="id" name="id" [(ngModel)]="empresa.id" />
 
       <div class="flex flex-col gap-2">
         <label for="nombre">Nombre de la Empresa:</label>
-        <input type="text" id="nombre" name="nombre" required />
+        <input type="text" id="nombre" name="nombre" [(ngModel)]="empresa.nombre" required />
       </div>
 
       <div class="flex flex-col gap-2">
         <label for="nit">NIT:</label>
-        <input type="text" id="nit" name="nit" required />
+        <input type="text" id="nit" name="nit" [(ngModel)]="empresa.nit" required />
       </div>
 
       <div class="flex flex-col gap-2">
         <label for="ciudad">Ciudad:</label>
-        <input type="text" id="ciudad" name="ciudad" required />
+        <input type="text" id="ciudad" name="ciudad" [(ngModel)]="empresa.ciudad" required />
       </div>
 
       <div class="flex flex-col gap-2">
         <label for="sector">Sector:</label>
-        <input type="text" id="sector" name="sector" required />
+        <input type="text" id="sector" name="sector" [(ngModel)]="empresa.sector" required />
       </div>
 
       <button type="submit" class="bg-indigo-500 text-white font-semibold p-2 rounded">
